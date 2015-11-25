@@ -13,6 +13,10 @@ import java.util.List;
 /**
  * Created by Mark on 11/24/2015.
  */
+
+//Adding 1 comment to test git
+
+
 // Create the basic adapter extending from RecyclerView.Adapter
 // Note that we specify the custom ViewHolder which gives us access to our views
 public class ContactsAdapter extends
