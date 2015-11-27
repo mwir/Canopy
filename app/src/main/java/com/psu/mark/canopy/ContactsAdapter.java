@@ -1,11 +1,11 @@
 package com.psu.mark.canopy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -14,7 +14,6 @@ import java.util.List;
  * Created by Mark on 11/24/2015.
  */
 
-//Adding 1 comment to test git
 
 
 // Create the basic adapter extending from RecyclerView.Adapter
@@ -22,13 +21,17 @@ import java.util.List;
 public class ContactsAdapter extends
         RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
 
+
+
     // Provide a direct reference to each of the views within a data item
     // Used to cache the views within the item layout for fast access
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        private Context context;
         // Your holder should contain a member variable
         // for any view that will be set as you render a row
         public TextView nameTextView;
-        public Button messageButton;
+      //  public Button messageButton;
+        private TreeDisplayActivity mTreeDisplayActivity;
 
         // We also create a constructor that accepts the entire item row
         // and does the view lookups to find each subview
@@ -38,8 +41,28 @@ public class ContactsAdapter extends
             super(itemView);
 
             nameTextView = (TextView) itemView.findViewById(R.id.contact_name);
-            messageButton = (Button) itemView.findViewById(R.id.message_button);
+            //going to make the button clickable. Arguably cleaner to have the text clickable,
+            //but not sure if that would cause accidental clicks
+            context = itemView.getContext();
+        //    messageButton = (Button) itemView.findViewById(R.id.message_button);
+            itemView.setOnClickListener(this);
+
+
         }
+
+        // Handles the row being being clicked -- finding conflicting info, maybe dont have to refer
+        //to position at all
+
+        @Override
+        public void onClick(View view) {
+
+             Intent i = new Intent(context, TreeDisplayActivity.class);
+
+            context.startActivity(i);
+        }
+
+
+
     }
 
     private List<Contact> mContacts;
@@ -71,7 +94,8 @@ public class ContactsAdapter extends
         TextView textView = viewHolder.nameTextView;
         textView.setText(contact.getName());
 
-        Button button = viewHolder.messageButton;
+     //   Button button = viewHolder.messageButton;
+
 
 
     }
