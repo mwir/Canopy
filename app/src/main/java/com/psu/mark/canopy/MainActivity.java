@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    public int contact_count=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // Create adapter passing in the sample user data
-        ContactsAdapter mAdapter = new ContactsAdapter(Contact.createContactsList(40));
+        ContactsAdapter mAdapter = new ContactsAdapter(Contact.createContactsList(contact_count));
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -41,8 +42,11 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "add contact", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                ++contact_count;
+                //Need to make a dialogue framgment here that allows a contact to be added
+
             }
         });
     }
