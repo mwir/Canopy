@@ -13,4 +13,11 @@
     tools:showIn="@layout/activity_tree_display"
     tools:context="com.psu.mark.canopy.TreeDisplayActivity">
 
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/leaf_diplay_button"
+        android:background="#99F6D6"/>
+
 </RelativeLayout>
