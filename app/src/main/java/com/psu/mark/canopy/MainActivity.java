@@ -1,5 +1,6 @@
 package com.psu.mark.canopy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    public int contact_count=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // Create adapter passing in the sample user data
-        ContactsAdapter mAdapter = new ContactsAdapter(Contact.createContactsList(contact_count));
+        ContactsAdapter mAdapter = new ContactsAdapter(Contact.createContactsList(40));
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -42,10 +42,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "add contact", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                ++contact_count;
-                //Need to make a dialogue framgment here that allows a contact to be added
+                Intent i = AddContactActivity.newIntent(MainActivity.this);
+                startActivity(i);
 
             }
         });
