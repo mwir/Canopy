@@ -1,26 +1,29 @@
 package com.psu.mark.canopy;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.TypedArray;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.Toast;
+
+import java.util.Arrays;
 
 
 public class TreeDisplayActivity extends AppCompatActivity {
 
-    //collect XML data from specified contact
-   // Resources res = getResources();
-   // int number_of_leaves = res.getInteger(R.integer.number_of_leaves);
-
-   // int[] leaft1_path =res.getIntArray(R.array.leaf_1_path);
-    Button mTemplateButton = (Button)findViewById(R.id.leaf_diplay_button);
-    ViewGroup.LayoutParams params = mTemplateButton.getLayoutParams();
-
+    private String selectedBranch;
+    private String areacode=Integer.toString(503);
+    private String baharsnumber = Integer.toString(7253000);
+    private String fullnumber=areacode+baharsnumber;
+   // Context.getSystemService(Context.TELEPHONY_SERVICE)
     public TreeDisplayActivity() {
 
     }
@@ -32,34 +35,29 @@ public class TreeDisplayActivity extends AppCompatActivity {
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
             final int number_of_leaves = this.getResources().getInteger(R.integer.number_of_leaves);
-
-
-
-//test dynamic button creation
-            Button btn;
-            //LinearLayout layout=new LinearLayout(this);
-            LinearLayout ll = new LinearLayout(this);
-            for (int index = 1; index <= number_of_leaves; index++) {
-              //  LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                //        LinearLayout.LayoutParams.MATCH_PARENT,
-                  //      LinearLayout.LayoutParams.WRAP_CONTENT);
-                btn = new Button(this);
-              //  btn.setId(View.generateViewId());
-              //  final int id_ = btn.getId();
-                btn.setText("button " + index);
-               // btn.setBackgroundColor(Color.rgb(70, 80, 90));
-                btn.setLayoutParams(params);
-                ll.addView(btn, params);
-                //btn = ((Button) findViewById(id_));
-               // btn.setOnClickListener(new View.OnClickListener() {
-               //     public void onClick(View view) {
-              //          Toast.makeText(view.getContext(),
-              //                  "Button clicked index = " + id_, Toast.LENGTH_SHORT)
-               //                 .show();
-               //     }
-               // });
+            TypedArray ta = this.getResources().obtainTypedArray(R.array.contact_structure_array);
+            final int[][] leaf_branches = new int[number_of_leaves][];
+            for (int i = 0; i <= number_of_leaves-1; i++){
+                int id = ta.getResourceId(i, 0);
+                 leaf_branches[i]=getResources().getIntArray(id);
             }
+            ta.recycle(); //I read this was important
 
+
+                GridView gridview = (GridView) findViewById(R.id.gridview);
+            gridview.setAdapter(new LeafAdapter(this));
+
+            gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View v,
+                                        int position, long id) {
+                    int[] branch_path=leaf_branches[position];//position is a value specific to grid view
+
+                    Toast.makeText(TreeDisplayActivity.this, "tree path" + Arrays.toString(branch_path) ,
+                            Toast.LENGTH_SHORT).show();
+
+                    selectedBranch=Arrays.toString(branch_path);
+                }
+            });
 
 
 
@@ -68,14 +66,30 @@ public class TreeDisplayActivity extends AppCompatActivity {
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Snackbar.make(view, String.format("%d",number_of_leaves), Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+
+                    Intent intent = new Intent(Intent.ACTION_CALL);
+                    intent.setData(Uri.parse("tel://"+fullnumber +","+","+","+selectedBranch));
+               //     intent.setData(Uri.parse("tel:7148651560"));
+                    startActivity(intent);
+                   /* final Handler handler = new Handler();
+
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(Intent.ACTION_CALL);
+                            // Do something after 5s = 5000ms
+                            intent.setData(Uri.parse("tel://" + selectedBranch));
+                        }
+                    }, 2000);*/
+
+
+
                 }
             });
         }
 
 
-//Create a Tree
+
 
 
     }

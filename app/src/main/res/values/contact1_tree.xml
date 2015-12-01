@@ -2,30 +2,122 @@
 <resources>
     <!--this contains the path structure for a single contact, user readable string resources will be stored
      elsewhere-->
-    <integer name="number_of_leaves">5</integer>
+    <integer name="number_of_leaves">14</integer>
 
     <integer-array name="leaf_1_path">
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
+        <item>4</item>
     </integer-array>
 
     <integer-array name="leaf_2_path">
         <item>1</item>
         <item>1</item>
-        <item>2</item>
+        <item>1</item>
     </integer-array>
+
     <integer-array name="leaf_3_path">
         <item>1</item>
-        <item>2</item>
         <item>1</item>
+        <item>2</item>
     </integer-array>
+
     <integer-array name="leaf_4_path">
         <item>1</item>
-        <item>2</item>
-        <item>2</item>
+        <item>1</item>
+        <item>3</item>
     </integer-array>
+
     <integer-array name="leaf_5_path">
+        <item>1</item>
+        <item>3</item>
+    </integer-array>
+
+    <integer-array name="leaf_6_path">
+        <item>1</item>
+        <item>1</item>
+        <item>5</item>
+    </integer-array>
+
+    <integer-array name="leaf_7_path">
+        <item>1</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="leaf_8_path">
+        <item>1</item>
+        <item>2</item>
+        <item>1</item>
+    </integer-array>
+
+    <integer-array name="leaf_9_path">
+        <item>1</item>
+        <item>2</item>
         <item>2</item>
     </integer-array>
+
+    <integer-array name="leaf_10_path">
+        <item>1</item>
+        <item>2</item>
+        <item>5</item>
+    </integer-array>
+
+    <integer-array name="leaf_11_path">
+        <item>7</item>
+        <item>1</item>
+    </integer-array>
+
+    <integer-array name="leaf_12_path">
+        <item>7</item>
+        <item>2</item>
+    </integer-array>
+
+    <integer-array name="leaf_13_path">
+        <item>7</item>
+        <item>3</item>
+    </integer-array>
+
+    <integer-array name="leaf_14_path">
+        <item>2</item>
+
+    </integer-array>
+
+
+
+
+    <string-array
+        name="PSU_leaf_strings">
+        <item>school closure info</item>
+        <item>Schedule Visit</item>
+        <item>New Student Orientation</item>
+        <item>Odin Account</item>
+        <item>Financial Aid</item>
+        <item>Administrative Operator</item>
+        <item>Office Location</item>
+        <item>Registration Verification</item>
+        <item>Registration Holds</item>
+        <item>Registration Records Operator</item>
+        <item>Campus Emergency</item>
+        <item>Security Operator</item>
+        <item>Campus Safety Policy</item>
+        <item>Enter Party Extension</item>
+
+
+    </string-array>
+
+    <array name="contact_structure_array">
+        <item>@array/leaf_1_path</item>
+        <item>@array/leaf_2_path</item>
+        <item>@array/leaf_3_path</item>
+        <item>@array/leaf_4_path</item>
+        <item>@array/leaf_5_path</item>
+        <item>@array/leaf_6_path</item>
+        <item>@array/leaf_7_path</item>
+        <item>@array/leaf_8_path</item>
+        <item>@array/leaf_9_path</item>
+        <item>@array/leaf_10_path</item>
+        <item>@array/leaf_11_path</item>
+        <item>@array/leaf_12_path</item>
+        <item>@array/leaf_13_path</item>
+        <item>@array/leaf_14_path</item>
+    </array>
+
 </resources>
