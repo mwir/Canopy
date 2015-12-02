@@ -27,11 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
 
+
+
         // Create adapter passing in the sample user data
         ContactsAdapter mAdapter = new ContactsAdapter(Contact.createContactsList(40));
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
 
         //Default Stuff, dont know if we want it
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
