@@ -20,9 +20,9 @@ import java.util.Arrays;
 public class TreeDisplayActivity extends AppCompatActivity {
 
     private String selectedBranch;
-    private String areacode=Integer.toString(503);
-    private String baharsnumber = Integer.toString(7253000);
-    private String fullnumber=areacode+baharsnumber;
+    private String areacode;
+    private String contactnumber;
+    private String fullnumber;
    // Context.getSystemService(Context.TELEPHONY_SERVICE)
     public TreeDisplayActivity() {
 
@@ -36,6 +36,9 @@ public class TreeDisplayActivity extends AppCompatActivity {
             setSupportActionBar(toolbar);
             final int number_of_leaves = this.getResources().getInteger(R.integer.number_of_leaves);
             TypedArray ta = this.getResources().obtainTypedArray(R.array.contact_structure_array);
+          //  final String fullnumber = Integer.toString(this.getResources().getInteger(R.integer.contact_area_code))+
+               //     Integer.toString(this.getResources().getInteger(R.integer.contact_number));
+            final String fullnumber = this.getResources().getString(R.string.contact_number);
             final int[][] leaf_branches = new int[number_of_leaves][];
             for (int i = 0; i <= number_of_leaves-1; i++){
                 int id = ta.getResourceId(i, 0);
