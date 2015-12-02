@@ -4,6 +4,9 @@
      elsewhere-->
     <integer name="number_of_leaves">14</integer>
 
+    <string name="contact_number">5037253000</string>
+
+
     <integer-array name="leaf_1_path">
         <item>4</item>
     </integer-array>
