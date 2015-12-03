@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+        <!--this contains the path structure for a single contact, user readable string resources will be stored
+         elsewhere-->
+        <integer name="number_of_leaves5032957827">3</integer>
+    <string name="timing_parameter5032957827">,,</string>
+        <string name="contact_number5032957827">5032957827</string>
+
+
+        <integer-array name="leaf_1_path5032957827">
+            <item>1</item>
+        </integer-array>
+
+        <integer-array name="leaf_2_path5032957827">
+            <item>2</item>
+
+        </integer-array>
+
+        <integer-array name="leaf_3_path5032957827">
+            <item>3</item>
+
+        </integer-array>
+
+
+
+
+
+
+
+
+        <string-array
+            name="leaf_strings5032957827">
+            <item>Hours and Location</item>
+            <item>Access Accounts or Speak to Representative</item>
+            <item>Leave a Message</item>
+
+
+
+
+
+        </string-array>
+
+        <array name="contact_structure_array5032957827">
+            <item>@array/leaf_1_path5032957827</item>
+            <item>@array/leaf_2_path5032957827</item>
+            <item>@array/leaf_3_path5032957827</item>
+
+
+
+        </array>
+
+
+
+
+</resources>

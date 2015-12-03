@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+
+    <string-array
+        name="ContactsArray">
+        <item>5037253000</item>
+        <item>5037253001</item>
+        <item>5032957827</item>
+        <item>18009778860</item>
+
+
+
+
+    </string-array>
+
+
+
+
+
+
+    </resources>

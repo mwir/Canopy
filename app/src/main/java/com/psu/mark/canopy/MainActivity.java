@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity  implements Runnable{
               //  Toast.makeText(MainActivity.this, "contact number" + contact_number, //<< get the contact # following treesdisplay method
               //          Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(MainActivity.this, "CLICK", Toast.LENGTH_SHORT).show();
+
 
                 Log.i("HQcontact ", contact_number);
                 Intent i = new Intent(MainActivity.this, TreeDisplayActivity.class);
