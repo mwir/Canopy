@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -35,10 +36,11 @@ public class TreeDisplayActivity extends AppCompatActivity {
             //Standard format names that need to be pre-pended with phone number
 
             //get primary contact number
-           // String identifier = "5037253001";
+//            String identifier = "5037253001";
             String identifier = getIntent().getExtras().getString("id_key");
             String packageName = getPackageName();
             int this_contact_number = getResources().getIdentifier("contact_number" +identifier, "string", packageName);
+            Log.i("identifier", "id " + identifier);
 
             //get the number of leaves
 
@@ -57,7 +59,9 @@ public class TreeDisplayActivity extends AppCompatActivity {
             //get timing parameter
 
             int this_timing_parameter= getResources().getIdentifier("timing_parameter" + identifier, "string", packageName);
-           final String timing_parameter = getResources().getString(this_timing_parameter);
+            Log.i("this_timing_parameter", "this_timing_parameter " + this_timing_parameter);
+
+            final String timing_parameter = getResources().getString(this_timing_parameter);
             final String inside_timing_parameter=timing_parameter.substring(timing_parameter.length()/2);
 
            int number_of_leaves = this.getResources().getInteger(this_number_of_leaves);

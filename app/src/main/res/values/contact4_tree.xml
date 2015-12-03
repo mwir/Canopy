@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--this contains the path structure for a single contact, user readable string resources will be stored
+     elsewhere-->
+    <integer name="number_of_leaves18009778860">10</integer>
+    <string name="timing_parameter18009778860">,,,,,,,,,</string>
+    <string name="contact_number18009778860">18009778860</string>
+
+
+    <integer-array name="leaf_1_path18009778860">
+        <item>0</item>
+    </integer-array>
+
+    <integer-array name="leaf_2_path18009778860">
+        <item>1</item>
+        <item>1</item>
+    </integer-array>
+
+    <integer-array name="leaf_3_path18009778860">
+        <item>1</item>
+        <item>3</item>
+    </integer-array>
+
+    <integer-array name="leaf_4_path18009778860">
+        <item>1</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="leaf_5_path18009778860">
+        <item>1</item>
+        <item>5</item>
+    </integer-array>
+
+    <integer-array name="leaf_6_path18009778860">
+        <item>2</item>
+    </integer-array>
+
+    <integer-array name="leaf_7_path18009778860">
+        <item>3</item>
+        <item>1</item>
+    </integer-array>
+
+    <integer-array name="leaf_8_path18009778860">
+        <item>3</item>
+        <item>2</item>
+    </integer-array>
+
+    <integer-array name="leaf_9_path18009778860">
+        <item>3</item>
+        <item>3</item>
+    </integer-array>
+
+    <integer-array name="leaf_10_path18009778860">
+        <item>4</item>
+    </integer-array>
+
+
+
+
+
+
+
+
+    <string-array
+        name="leaf_strings18009778860">
+        <item>Key in party extension</item>
+        <item>Individual and Family Plan Agent</item>
+        <item>Dental Plan Agent</item>
+        <item>Check Individual or Family Pending Application</item>
+        <item>Current Individual or Family Customer</item>
+        <item>Medicare Plans</item>
+        <item>Small Business Insurance Quote</item>
+        <item>Small Business Pending Application</item>
+        <item>Small Business Current Customer</item>
+        <item>Life Insurance</item>
+
+
+
+    </string-array>
+
+    <array name="contact_structure_array18009778860">
+        <item>@array/leaf_1_path18009778860</item>
+        <item>@array/leaf_2_path18009778860</item>
+        <item>@array/leaf_3_path18009778860</item>
+        <item>@array/leaf_4_path18009778860</item>
+        <item>@array/leaf_5_path18009778860</item>
+        <item>@array/leaf_6_path18009778860</item>
+        <item>@array/leaf_7_path18009778860</item>
+        <item>@array/leaf_8_path18009778860</item>
+        <item>@array/leaf_9_path18009778860</item>
+        <item>@array/leaf_10_path18009778860</item>
+
+
+    </array>
+
+</resources>

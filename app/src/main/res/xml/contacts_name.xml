@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-
-
-
     <string-array
         name="ContactsArray">
-        <item>PSU_5037253000</item>
-        <item>CHASEBANK_5037253001</item>
-        <item>TEST_5037254000</item>
-        <item>TEST2_5037259999</item>
-
-
-
-
+        <item name= "PSU" >5037253000</item>
+        <item name= "CHASE">5037253001</item>
+        <item name= "DUMMY0">5037254000</item>
+        <item name= "DUMMY1">5037259999</item>
     </string-array>
-
-
-
-
-
-
-    </resources>
+</resources>

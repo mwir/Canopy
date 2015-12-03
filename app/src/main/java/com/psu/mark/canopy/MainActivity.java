@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,12 +14,15 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity  {
+import org.xmlpull.v1.XmlPullParserException;
 
+import java.io.IOException;
+import java.util.List;
 
+public class MainActivity extends AppCompatActivity  implements Runnable{
 
     //private List<Contact> contacts = null;
-    private String[] Contacts;
+    private List<Contact> Contacts;
 
     public MainActivity(){
 
@@ -28,9 +33,9 @@ public class MainActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Contacts = MainActivity.this.getResources().getStringArray(R.array.ContactsArray);
-
-       ListView listview = (ListView) findViewById(R.id.listview);
+//        Contacts = MainActivity.this.getResources().getStringArray(R.array.ContactsArray);
+        run();
+        ListView listview = (ListView) findViewById(R.id.listview);
 
 
         listview.setAdapter(new ContactsAdapter(this, Contacts));
@@ -39,7 +44,8 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                String contact_number= Contacts[position];//position is a value specific to grid view
+                Log.i("HQposition ", "p " + position);
+                String contact_number= Contacts.get(position).getID();//position is a value specific to grid view
            // String[] parts=fullcontact.split("-");
            //  String   contact_number = parts[1] ;
               //  Toast.makeText(MainActivity.this, "contact number" + contact_number, //<< get the contact # following treesdisplay method
@@ -47,7 +53,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 Toast.makeText(MainActivity.this, "CLICK", Toast.LENGTH_SHORT).show();
 
-
+                Log.i("HQcontact ", contact_number);
                 Intent i = new Intent(MainActivity.this, TreeDisplayActivity.class);
                 i.putExtra("id_key", contact_number);
 
@@ -96,16 +102,16 @@ public class MainActivity extends AppCompatActivity  {
         return super.onOptionsItemSelected(item);
     }
 
- /*   @Override
+    @Override
     public void run() {
         try {
-            contacts = Contact.createContactsListXML(this);
+            Contacts = Contact.createContactsListXML(this);
         } catch (XmlPullParserException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
 
 }

@@ -1,10 +1,13 @@
 package com.psu.mark.canopy;
 
 import android.content.Context;
+import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import java.util.List;
 
 /**
  * Created by Mark on 11/24/2015.
@@ -20,8 +23,8 @@ public class ContactsAdapter extends
 
 
     private Context mContext;
-    private String[] mContactIds;
-    public ContactsAdapter(Context c, String[] input_array) {
+    private List<Contact> mContactIds;
+    public ContactsAdapter(Context c, List<Contact> input_array) {
 
         //I am trying to migrate over to a passed in input array so I can retrieve it under the general method. Havent fixed main activity yet
         mContext = c;
@@ -30,7 +33,7 @@ public class ContactsAdapter extends
     }
 
     public int getCount() {
-        return mContactIds.length;
+        return mContactIds.size();
     }
 
     public Object getItem(int position) {
@@ -55,7 +58,7 @@ public class ContactsAdapter extends
            contactView = (TextView) convertView;
         }
 
-        contactView.setText(mContactIds[position]);
+        contactView.setText(mContactIds.get(position).getName());
 
         return contactView;
     }
