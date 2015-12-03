@@ -19,8 +19,9 @@ import java.util.Arrays;
 public class TreeDisplayActivity extends AppCompatActivity {
 
     private String selectedBranch;
+    private String[] leaf_strings;
 
-   // Context.getSystemService(Context.TELEPHONY_SERVICE)
+    // Context.getSystemService(Context.TELEPHONY_SERVICE)
     public TreeDisplayActivity() {
 
     }
@@ -34,18 +35,26 @@ public class TreeDisplayActivity extends AppCompatActivity {
             //Standard format names that need to be pre-pended with phone number
 
             //get primary contact number
+            String identifier = "5037253001";
             String packageName = getPackageName();
-            int this_contact_number = getResources().getIdentifier("contact_number", "string", packageName);
+            int this_contact_number = getResources().getIdentifier("contact_number" +identifier, "string", packageName);
 
             //get the number of leaves
 
-            int this_number_of_leaves = getResources().getIdentifier("number_of_leaves", "integer", packageName);
+            int this_number_of_leaves = getResources().getIdentifier("number_of_leaves"+identifier, "integer", packageName);
 
-            int this_contact_structure_array =  getResources().getIdentifier("contact_structure_array", "array", packageName);
+            //get contact structure array
+
+            int this_contact_structure_array =  getResources().getIdentifier("contact_structure_array"+identifier, "array", packageName);
+
+            //get leaf descriptions
+
+            int this_leaf_strings =  getResources().getIdentifier("leaf_strings"+identifier, "array", packageName);
+
+            leaf_strings=this.getResources().getStringArray(this_leaf_strings);
 
 
-
-           final int number_of_leaves = this.getResources().getInteger(this_number_of_leaves);
+           int number_of_leaves = this.getResources().getInteger(this_number_of_leaves);
             TypedArray ta = this.getResources().obtainTypedArray(this_contact_structure_array);
           //  final String fullnumber = Integer.toString(this.getResources().getInteger(R.integer.contact_area_code))+
                //     Integer.toString(this.getResources().getInteger(R.integer.contact_number));
@@ -60,7 +69,7 @@ public class TreeDisplayActivity extends AppCompatActivity {
 
                 GridView gridview = (GridView) findViewById(R.id.gridview);
 
-            gridview.setAdapter(new LeafAdapter(this));
+            gridview.setAdapter(new LeafAdapter(this, leaf_strings));
 
             gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 public void onItemClick(AdapterView<?> parent, View v,

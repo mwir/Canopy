@@ -13,9 +13,12 @@ import android.widget.TextView;
 public class LeafAdapter extends BaseAdapter {
     private Context mContext;
    private String[] mLeafIds;
-    public LeafAdapter(Context c) {
+    public LeafAdapter(Context c, String[] input_array) {
+
+        //I am trying to migrate over to a passed in input array so I can retrieve it under the general method. Havent fixed main activity yet
         mContext = c;
-       mLeafIds =  mContext.getResources().getStringArray(R.array.PSU_leaf_strings);
+        mLeafIds=input_array;
+      // mLeafIds =  mContext.getResources().getStringArray(R.array.PSU_leaf_strings);
     }
 
     public int getCount() {
