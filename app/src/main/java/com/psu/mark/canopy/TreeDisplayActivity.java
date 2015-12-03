@@ -35,7 +35,8 @@ public class TreeDisplayActivity extends AppCompatActivity {
             //Standard format names that need to be pre-pended with phone number
 
             //get primary contact number
-            String identifier = "5037253001";
+           // String identifier = "5037253001";
+            String identifier = getIntent().getExtras().getString("id_key");
             String packageName = getPackageName();
             int this_contact_number = getResources().getIdentifier("contact_number" +identifier, "string", packageName);
 

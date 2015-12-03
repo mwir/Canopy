@@ -57,6 +57,7 @@ public class ContactsAdapter extends
         public void onClick(View view) {
 
              Intent i = new Intent(context, TreeDisplayActivity.class);
+            i.putExtra("id_key", "5037253000");
 
             context.startActivity(i);
         }
