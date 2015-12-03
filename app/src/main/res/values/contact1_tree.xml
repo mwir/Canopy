@@ -2,83 +2,83 @@
 <resources>
     <!--this contains the path structure for a single contact, user readable string resources will be stored
      elsewhere-->
-    <integer name="number_of_leaves">14</integer>
+    <integer name="number_of_leaves5037253000">14</integer>
 
-    <string name="contact_number">5037253000</string>
+    <string name="contact_number5037253000">5037253000</string>
 
 
-    <integer-array name="leaf_1_path">
+    <integer-array name="leaf_1_path5037253000">
         <item>4</item>
     </integer-array>
 
-    <integer-array name="leaf_2_path">
+    <integer-array name="leaf_2_path5037253000">
         <item>1</item>
         <item>1</item>
         <item>1</item>
     </integer-array>
 
-    <integer-array name="leaf_3_path">
+    <integer-array name="leaf_3_path5037253000">
         <item>1</item>
         <item>1</item>
         <item>2</item>
     </integer-array>
 
-    <integer-array name="leaf_4_path">
+    <integer-array name="leaf_4_path5037253000">
         <item>1</item>
         <item>1</item>
         <item>3</item>
     </integer-array>
 
-    <integer-array name="leaf_5_path">
+    <integer-array name="leaf_5_path5037253000">
         <item>1</item>
         <item>3</item>
     </integer-array>
 
-    <integer-array name="leaf_6_path">
+    <integer-array name="leaf_6_path5037253000">
         <item>1</item>
         <item>1</item>
         <item>5</item>
     </integer-array>
 
-    <integer-array name="leaf_7_path">
+    <integer-array name="leaf_7_path5037253000">
         <item>1</item>
         <item>4</item>
     </integer-array>
 
-    <integer-array name="leaf_8_path">
+    <integer-array name="leaf_8_path5037253000">
         <item>1</item>
         <item>2</item>
         <item>1</item>
     </integer-array>
 
-    <integer-array name="leaf_9_path">
+    <integer-array name="leaf_9_path5037253000">
         <item>1</item>
         <item>2</item>
         <item>2</item>
     </integer-array>
 
-    <integer-array name="leaf_10_path">
+    <integer-array name="leaf_10_path5037253000">
         <item>1</item>
         <item>2</item>
         <item>5</item>
     </integer-array>
 
-    <integer-array name="leaf_11_path">
+    <integer-array name="leaf_11_path5037253000">
         <item>7</item>
         <item>1</item>
     </integer-array>
 
-    <integer-array name="leaf_12_path">
+    <integer-array name="leaf_12_path5037253000">
         <item>7</item>
         <item>2</item>
     </integer-array>
 
-    <integer-array name="leaf_13_path">
+    <integer-array name="leaf_13_path5037253000">
         <item>7</item>
         <item>3</item>
     </integer-array>
 
-    <integer-array name="leaf_14_path">
+    <integer-array name="leaf_14_path5037253000">
         <item>2</item>
 
     </integer-array>
@@ -87,7 +87,7 @@
 
 
     <string-array
-        name="PSU_leaf_strings">
+        name="leaf_strings5037253000">
         <item>school closure info</item>
         <item>Schedule Visit</item>
         <item>New Student Orientation</item>
@@ -106,21 +106,21 @@
 
     </string-array>
 
-    <array name="contact_structure_array">
-        <item>@array/leaf_1_path</item>
-        <item>@array/leaf_2_path</item>
-        <item>@array/leaf_3_path</item>
-        <item>@array/leaf_4_path</item>
-        <item>@array/leaf_5_path</item>
-        <item>@array/leaf_6_path</item>
-        <item>@array/leaf_7_path</item>
-        <item>@array/leaf_8_path</item>
-        <item>@array/leaf_9_path</item>
-        <item>@array/leaf_10_path</item>
-        <item>@array/leaf_11_path</item>
-        <item>@array/leaf_12_path</item>
-        <item>@array/leaf_13_path</item>
-        <item>@array/leaf_14_path</item>
+    <array name="contact_structure_array5037253000">
+        <item>@array/leaf_1_path5037253000</item>
+        <item>@array/leaf_2_path5037253000</item>
+        <item>@array/leaf_3_path5037253000</item>
+        <item>@array/leaf_4_path5037253000</item>
+        <item>@array/leaf_5_path5037253000</item>
+        <item>@array/leaf_6_path5037253000</item>
+        <item>@array/leaf_7_path5037253000</item>
+        <item>@array/leaf_8_path5037253000</item>
+        <item>@array/leaf_9_path5037253000</item>
+        <item>@array/leaf_10_path5037253000</item>
+        <item>@array/leaf_11_path5037253000</item>
+        <item>@array/leaf_12_path5037253000</item>
+        <item>@array/leaf_13_path5037253000</item>
+        <item>@array/leaf_14_path5037253000</item>
     </array>
 
 </resources>
