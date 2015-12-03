@@ -1,6 +1,7 @@
 package com.psu.mark.canopy;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -44,6 +45,7 @@ public class LeafAdapter extends BaseAdapter {
         }
 
         leafView.setText(mLeafIds[position]);
+        leafView.setBackgroundColor(Color.GREEN);
         return leafView;
     }
 

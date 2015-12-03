@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/buttonlayout"
-   android:orientation="horizontal"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
-    android:layout_weight="1"
-
     >
 
- <!--  <Button
-         android:id="@+id/leaf_button"
+    <TextView
+        android:id="@+id/leaf_text_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        />
+
+    <!-- <Button
+         android:id="@+id/message_button"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:paddingLeft="16dp"
          android:paddingRight="16dp"
          android:textSize="10sp"
-         />-->
-    />
+         /> -->
+
 </LinearLayout>

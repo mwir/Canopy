@@ -1,11 +1,10 @@
 package com.psu.mark.canopy;
 
-import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -20,9 +19,7 @@ import java.util.Arrays;
 public class TreeDisplayActivity extends AppCompatActivity {
 
     private String selectedBranch;
-    private String areacode;
-    private String contactnumber;
-    private String fullnumber;
+
    // Context.getSystemService(Context.TELEPHONY_SERVICE)
     public TreeDisplayActivity() {
 
@@ -34,11 +31,25 @@ public class TreeDisplayActivity extends AppCompatActivity {
             setContentView(R.layout.activity_tree_display);
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
-            final int number_of_leaves = this.getResources().getInteger(R.integer.number_of_leaves);
-            TypedArray ta = this.getResources().obtainTypedArray(R.array.contact_structure_array);
+            //Standard format names that need to be pre-pended with phone number
+
+            //get primary contact number
+            String packageName = getPackageName();
+            int this_contact_number = getResources().getIdentifier("contact_number", "string", packageName);
+
+            //get the number of leaves
+
+            int this_number_of_leaves = getResources().getIdentifier("number_of_leaves", "integer", packageName);
+
+            int this_contact_structure_array =  getResources().getIdentifier("contact_structure_array", "array", packageName);
+
+
+
+           final int number_of_leaves = this.getResources().getInteger(this_number_of_leaves);
+            TypedArray ta = this.getResources().obtainTypedArray(this_contact_structure_array);
           //  final String fullnumber = Integer.toString(this.getResources().getInteger(R.integer.contact_area_code))+
                //     Integer.toString(this.getResources().getInteger(R.integer.contact_number));
-            final String fullnumber = this.getResources().getString(R.string.contact_number);
+            final String fullnumber = this.getResources().getString(this_contact_number);
             final int[][] leaf_branches = new int[number_of_leaves][];
             for (int i = 0; i <= number_of_leaves-1; i++){
                 int id = ta.getResourceId(i, 0);
@@ -48,6 +59,7 @@ public class TreeDisplayActivity extends AppCompatActivity {
 
 
                 GridView gridview = (GridView) findViewById(R.id.gridview);
+
             gridview.setAdapter(new LeafAdapter(this));
 
             gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -57,6 +69,8 @@ public class TreeDisplayActivity extends AppCompatActivity {
 
                     Toast.makeText(TreeDisplayActivity.this, "tree path" + Arrays.toString(branch_path) ,
                             Toast.LENGTH_SHORT).show();
+
+
 
                     selectedBranch=Arrays.toString(branch_path);
                 }
