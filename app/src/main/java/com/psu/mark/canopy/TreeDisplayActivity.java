@@ -54,11 +54,15 @@ public class TreeDisplayActivity extends AppCompatActivity {
 
             leaf_strings=this.getResources().getStringArray(this_leaf_strings);
 
+            //get timing parameter
+
+            int this_timing_parameter= getResources().getIdentifier("timing_parameter" + identifier, "string", packageName);
+           final String timing_parameter = getResources().getString(this_timing_parameter);
+            final String inside_timing_parameter=timing_parameter.substring(timing_parameter.length()/2);
 
            int number_of_leaves = this.getResources().getInteger(this_number_of_leaves);
             TypedArray ta = this.getResources().obtainTypedArray(this_contact_structure_array);
-          //  final String fullnumber = Integer.toString(this.getResources().getInteger(R.integer.contact_area_code))+
-               //     Integer.toString(this.getResources().getInteger(R.integer.contact_number));
+
             final String fullnumber = this.getResources().getString(this_contact_number);
             final int[][] leaf_branches = new int[number_of_leaves][];
             for (int i = 0; i <= number_of_leaves-1; i++){
@@ -82,7 +86,8 @@ public class TreeDisplayActivity extends AppCompatActivity {
 
 
 
-                    selectedBranch=Arrays.toString(branch_path);
+                 String   intermediaryselectedBranch=Arrays.toString(branch_path);
+                  selectedBranch=intermediaryselectedBranch.replaceAll(",", inside_timing_parameter);
                 }
             });
 
@@ -95,7 +100,7 @@ public class TreeDisplayActivity extends AppCompatActivity {
                 public void onClick(View view) {
 
                     Intent intent = new Intent(Intent.ACTION_CALL);
-                    intent.setData(Uri.parse("tel://"+fullnumber +","+","+","+selectedBranch));
+                    intent.setData(Uri.parse("tel://"+fullnumber +timing_parameter+selectedBranch));
                //     intent.setData(Uri.parse("tel:7148651560"));
                     startActivity(intent);
                    /* final Handler handler = new Handler();
