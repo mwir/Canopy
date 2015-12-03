@@ -57,7 +57,7 @@ public class TreeDisplayActivity extends AppCompatActivity {
 
             int this_timing_parameter= getResources().getIdentifier("timing_parameter" + identifier, "string", packageName);
            final String timing_parameter = getResources().getString(this_timing_parameter);
-            final String inside_timing_parameter=timing_parameter.substring(timing_parameter.length() / 2);
+            final String inside_timing_parameter=timing_parameter.substring(0,(timing_parameter.length()));
 
            int number_of_leaves = this.getResources().getInteger(this_number_of_leaves);
             TypedArray ta = this.getResources().obtainTypedArray(this_contact_structure_array);

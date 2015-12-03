@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity  {
               //  Toast.makeText(MainActivity.this, "contact number" + contact_number, //<< get the contact # following treesdisplay method
               //          Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(MainActivity.this, "CLICK", Toast.LENGTH_SHORT).show();
+
 
 
                 Intent i = new Intent(MainActivity.this, TreeDisplayActivity.class);
