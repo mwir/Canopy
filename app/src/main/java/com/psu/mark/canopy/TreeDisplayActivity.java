@@ -1,7 +1,6 @@
 package com.psu.mark.canopy;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,7 +17,7 @@ import java.util.Arrays;
 
 public class TreeDisplayActivity extends AppCompatActivity {
 
-    private String selectedBranch;
+    private String mselectedBranch;
     private String[] leaf_strings;
 
     // Context.getSystemService(Context.TELEPHONY_SERVICE)
@@ -58,7 +57,7 @@ public class TreeDisplayActivity extends AppCompatActivity {
 
             int this_timing_parameter= getResources().getIdentifier("timing_parameter" + identifier, "string", packageName);
            final String timing_parameter = getResources().getString(this_timing_parameter);
-            final String inside_timing_parameter=timing_parameter.substring(timing_parameter.length()/2);
+            final String inside_timing_parameter=timing_parameter.substring(timing_parameter.length() / 2);
 
            int number_of_leaves = this.getResources().getInteger(this_number_of_leaves);
             TypedArray ta = this.getResources().obtainTypedArray(this_contact_structure_array);
@@ -74,22 +73,22 @@ public class TreeDisplayActivity extends AppCompatActivity {
 
             GridView gridview = (GridView) findViewById(R.id.gridview);
 
-            gridview.setAdapter(new LeafAdapter(this, leaf_strings));
+            gridview.setAdapter(new LeafAdapter(this, leaf_strings, leaf_branches, inside_timing_parameter));
 
-            gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+           /* gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 public void onItemClick(AdapterView<?> parent, View v,
                                         int position, long id) {
-                    int[] branch_path=leaf_branches[position];//position is a value specific to grid view
+                    int[] branch_path = leaf_branches[position];//position is a value specific to grid view
 
-                    Toast.makeText(TreeDisplayActivity.this, "tree path" + Arrays.toString(branch_path) ,
+                    Toast.makeText(TreeDisplayActivity.this, "tree path" + Arrays.toString(branch_path),
                             Toast.LENGTH_SHORT).show();
 
 
-
-                 String   intermediaryselectedBranch=Arrays.toString(branch_path);
-                  selectedBranch=intermediaryselectedBranch.replaceAll(",", inside_timing_parameter);
+                    String intermediaryselectedBranch = Arrays.toString(branch_path);
+                    selectedBranch = intermediaryselectedBranch.replaceAll(",", inside_timing_parameter);
                 }
-            });
+            });*/
 
 
 
@@ -100,8 +99,8 @@ public class TreeDisplayActivity extends AppCompatActivity {
                 public void onClick(View view) {
 
                     Intent intent = new Intent(Intent.ACTION_CALL);
-                    intent.setData(Uri.parse("tel://"+fullnumber +timing_parameter+selectedBranch));
-               //     intent.setData(Uri.parse("tel:7148651560"));
+                    intent.setData(Uri.parse("tel://" + fullnumber + timing_parameter + mselectedBranch));
+                    //     intent.setData(Uri.parse("tel:7148651560"));
                     startActivity(intent);
                    /* final Handler handler = new Handler();
 
@@ -115,13 +114,15 @@ public class TreeDisplayActivity extends AppCompatActivity {
                     }, 2000);*/
 
 
-
                 }
             });
+
+
+
+
         }
 
 
-
-
-
+    public void setSelectedBranch(String selectedBranch) {mselectedBranch=selectedBranch;
     }
+}
