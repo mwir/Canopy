@@ -68,7 +68,7 @@ public class TreeDisplayActivity extends AppCompatActivity {
             ta.recycle(); //I read this was important
 
 
-                GridView gridview = (GridView) findViewById(R.id.gridview);
+            GridView gridview = (GridView) findViewById(R.id.gridview);
 
             gridview.setAdapter(new LeafAdapter(this, leaf_strings));
 

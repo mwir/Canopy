@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class Contact {
     private String mName;
-    private boolean mOnline;
+
 
     public Contact(String name, boolean online) {
         mName = name;
@@ -28,9 +28,6 @@ public class Contact {
         return mName;
     }
 
-    public boolean isOnline() {
-        return mOnline;
-    }
 
     private static int lastContactId = 0;
 

@@ -2,14 +2,12 @@ package com.psu.mark.canopy;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.view.Menu;
-import android.view.MenuItem;
 
 public class AddContactActivity extends AppCompatActivity {
 
@@ -24,6 +22,9 @@ public class AddContactActivity extends AppCompatActivity {
     private EditText mNameEditText;
     private Button mDoneButton;
     private Button mCancelButton;
+    private String mContactKey;
+    public static final String MY_PREFS_NAME = "CanopyPrefsFile";
+
 
     private String mNameStr;
     private String mPhoneStr;
@@ -53,6 +54,15 @@ public class AddContactActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mNameStr = mNameEditText.getText().toString();
                 mPhoneStr = mPhoneEditText.getText().toString();
+
+     //Deprecating Contact Storage For Demo Day, as it doesnt work yet
+                //ALL contacts stored in dummy XML
+               // mContactKey=mPhoneStr+mNameStr;
+               // SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+              //  editor.putString("mPhoneStr", mContactKey);
+             //   editor.commit();
+
+
                 finish();
             }
         });

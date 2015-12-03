@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<contacts>
-    <string name="contact_1">PSU_leaf_strings</string>
-    <string name="contact_2">One_leaf_strings</string>
-    <string name="contact_3">Two_leaf_strings</string>
+<resources>
 
-</contacts>
+
+
+
+    <string-array
+        name="ContactsArray">
+        <item>PSU_5037253000</item>
+        <item>CHASEBANK_5037253001</item>
+        <item>TEST_5037254000</item>
+        <item>TEST2_5037259999</item>
+
+
+
+
+    </string-array>
+
+
+
+
+
+
+    </resources>

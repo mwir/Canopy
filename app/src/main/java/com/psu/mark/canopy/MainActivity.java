@@ -4,45 +4,59 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
 
-import org.xmlpull.v1.XmlPullParserException;
+public class MainActivity extends AppCompatActivity  {
 
-import java.io.IOException;
-import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements Runnable {
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private List<Contact> contacts = null;
+    //private List<Contact> contacts = null;
+    private String[] Contacts;
+
+    public MainActivity(){
+
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
-        // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(this);
+        Contacts = MainActivity.this.getResources().getStringArray(R.array.ContactsArray);
 
-        mRecyclerView.setLayoutManager(mLayoutManager);
-
-        ContactsAdapter mAdapter= new ContactsAdapter();
-        run();
-        mAdapter.setContacts(contacts);
+       ListView listview = (ListView) findViewById(R.id.listview);
 
 
+        listview.setAdapter(new ContactsAdapter(this, Contacts));
 
-        // Create adapter passing in the sample user data
-//        ContactsAdapter mAdapter = new ContactsAdapter(Contact.createContactsList(40));
-        mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v,
+                                    int position, long id) {
+                String contact_number= Contacts[position];//position is a value specific to grid view
+           // String[] parts=fullcontact.split("-");
+           //  String   contact_number = parts[1] ;
+              //  Toast.makeText(MainActivity.this, "contact number" + contact_number, //<< get the contact # following treesdisplay method
+              //          Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(MainActivity.this, "CLICK", Toast.LENGTH_SHORT).show();
+
+
+                Intent i = new Intent(MainActivity.this, TreeDisplayActivity.class);
+                i.putExtra("id_key", contact_number);
+
+               startActivity(i);
+            }
+        });
+
+
+
 
         //Default Stuff, dont know if we want it
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -53,7 +67,8 @@ public class MainActivity extends AppCompatActivity implements Runnable {
             @Override
             public void onClick(View view) {
                 Intent i = AddContactActivity.newIntent(MainActivity.this);
-                startActivity(i);
+               startActivity(i);
+
 
             }
         });
@@ -81,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements Runnable {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
+ /*   @Override
     public void run() {
         try {
             contacts = Contact.createContactsListXML(this);
@@ -90,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 
 }
