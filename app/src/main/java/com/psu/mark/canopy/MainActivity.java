@@ -11,11 +11,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements Runnable {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private List<Contact> contacts = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
 
+        ContactsAdapter mAdapter= new ContactsAdapter();
+        run();
+        mAdapter.setContacts(contacts);
+
 
 
         // Create adapter passing in the sample user data
-        ContactsAdapter mAdapter = new ContactsAdapter(Contact.createContactsList(40));
+//        ContactsAdapter mAdapter = new ContactsAdapter(Contact.createContactsList(40));
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -69,6 +79,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void run() {
+        try {
+            contacts = Contact.createContactsListXML(this);
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

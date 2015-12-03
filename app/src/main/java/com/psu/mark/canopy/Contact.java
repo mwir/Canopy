@@ -3,6 +3,7 @@ package com.psu.mark.canopy;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
+import android.util.Log;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -60,5 +61,27 @@ public class Contact {
             eventType = xpp.next();
         }
         return stringBuffer;
+    }
+
+    public static List<Contact> createContactsListXML (Activity activity)
+            throws XmlPullParserException, IOException
+    {
+        List<Contact> contacts = new ArrayList<Contact>();
+        String stringBuffer= "";
+        Resources res = activity.getResources();
+        XmlResourceParser xpp = res.getXml(R.xml.contacts_name);
+        xpp.next();
+        int eventType = xpp.getEventType();
+        while (eventType != XmlPullParser.END_DOCUMENT)
+        {
+            if(eventType == XmlPullParser.TEXT)
+            {
+                stringBuffer = xpp.getText();
+                Log.i("HQcontact ", stringBuffer);
+                contacts.add(new Contact(stringBuffer, true));
+            }
+            eventType = xpp.next();
+        }
+        return contacts;
     }
 }

@@ -69,7 +69,11 @@ public class ContactsAdapter extends
     public ContactsAdapter(List<Contact> contacts) {
         mContacts = contacts;
     }
+    public ContactsAdapter(){}
 
+    public void setContacts (List<Contact> contacts) {
+        mContacts = contacts;
+    }
 
     @Override
     public ContactsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -103,7 +107,11 @@ public class ContactsAdapter extends
     // Return the total count of items
     @Override
     public int getItemCount() {
-        return mContacts.size();
+        if (mContacts != null) {
+            return mContacts.size();
+        }
+        else
+            return 0;
     }
 
 
