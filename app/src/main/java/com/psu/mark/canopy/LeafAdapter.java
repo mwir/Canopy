@@ -1,7 +1,7 @@
 package com.psu.mark.canopy;
 
 import android.content.Context;
-import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -59,7 +59,7 @@ public class LeafAdapter extends BaseAdapter {
         }
 
         leafView.setText(mLeafIds[position]);
-        leafView.setBackgroundColor(Color.GREEN);
+        leafView.getBackground().setColorFilter(0xFF00FF4F, PorterDuff.Mode.MULTIPLY);
        // leafView.setClickable(true);
         leafView.setId(position);
 
