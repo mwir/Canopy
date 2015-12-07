@@ -52,14 +52,14 @@ public class LeafAdapter extends BaseAdapter {
             //leafView.setLayoutParams(new GridView.LayoutParams(100, 55));
             // leafView.setLayoutParams(new GridView.LayoutParams(185, 185));
 
-            leafView.setPadding(8, 8, 8, 8);
+            leafView.setPadding(28, 28, 28, 28);
 
         } else {
             leafView = (Button) convertView;
         }
 
         leafView.setText(mLeafIds[position]);
-        leafView.getBackground().setColorFilter(0xFF00FF4F, PorterDuff.Mode.MULTIPLY);
+        leafView.getBackground().setColorFilter(0xFF22FF4F, PorterDuff.Mode.MULTIPLY);
        // leafView.setClickable(true);
         leafView.setId(position);
 

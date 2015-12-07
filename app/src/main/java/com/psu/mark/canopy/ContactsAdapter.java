@@ -1,7 +1,6 @@
 package com.psu.mark.canopy;
 
 import android.content.Context;
-import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;

@@ -6,14 +6,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
-
-import java.util.Arrays;
 
 
 public class TreeDisplayActivity extends AppCompatActivity {
@@ -30,8 +25,8 @@ public class TreeDisplayActivity extends AppCompatActivity {
         protected void onCreate (Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_tree_display);
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-            setSupportActionBar(toolbar);
+           // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+           // setSupportActionBar(toolbar);
             //Standard format names that need to be pre-pended with phone number
 
             //get primary contact number

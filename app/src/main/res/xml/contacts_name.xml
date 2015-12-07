@@ -3,8 +3,8 @@
     <string-array
         name="ContactsArray">
         <item name= "PSU" >5037253000</item>
-        <item name= "CHASE">5037253001</item>
-        <item name= "DUMMY0">5037254000</item>
-        <item name= "DUMMY1">5037259999</item>
+        <item name= "TriMet">5032387433</item>
+        <item name= "CHASE">5032957827</item>
+        <item name= "Esurance">18009778860</item>
     </string-array>
 </resources>
