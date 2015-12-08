@@ -15,6 +15,14 @@ public class AddContactActivity extends AppCompatActivity {
             "com.psu.mark.canopy.new_name";
     public static final String EXTRA_NEW_PHONE =
             "com.psu.mark.canopy.new_phone";
+    //File management constants
+    private Context mContext;
+    String filename = "contacts.txt";
+
+
+
+
+    String file;
 
     private TextView mNameTextView;
     private TextView mPhoneTextView;
@@ -61,6 +69,10 @@ public class AddContactActivity extends AppCompatActivity {
                // SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
               //  editor.putString("mPhoneStr", mContactKey);
              //   editor.commit();
+
+                //All contacts stored in internal storage
+
+
 
 
                 finish();

@@ -4,6 +4,7 @@
      elsewhere-->
     <integer name="number_of_leaves5037253000">14</integer>
     <string name="timing_parameter5037253000">,,</string>
+    <integer name="behavior5037253000">1</integer>
     <string name="contact_number5037253000">5037253000</string>
 
 
@@ -95,9 +96,9 @@
         <item>Financial Aid</item>
         <item>Administrative Operator</item>
         <item>Office Location</item>
-        <item>Registration Verification</item>
+        <item>Verify Registration</item>
         <item>Registration Holds</item>
-        <item>Registration Records Operator</item>
+        <item>Reg. and Records Operator</item>
         <item>Campus Emergency</item>
         <item>Security Operator</item>
         <item>Campus Safety Policy</item>

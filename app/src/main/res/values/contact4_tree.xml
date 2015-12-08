@@ -4,6 +4,7 @@
      elsewhere-->
     <integer name="number_of_leaves18009778860">10</integer>
     <string name="timing_parameter18009778860">,,,,,,,,,</string>
+    <integer name="behavior18009778860">0</integer>
     <string name="contact_number18009778860">18009778860</string>
 
 
@@ -66,12 +67,12 @@
         <item>Key in party extension</item>
         <item>Individual and Family Plan Agent</item>
         <item>Dental Plan Agent</item>
-        <item>Check Individual or Family Pending Application</item>
-        <item>Current Individual or Family Customer</item>
+        <item>Check Ind./Fam. App</item>
+        <item>Current Ind./Fam. Customer</item>
         <item>Medicare Plans</item>
-        <item>Small Business Insurance Quote</item>
-        <item>Small Business Pending Application</item>
-        <item>Small Business Current Customer</item>
+        <item>Business Insurance Quote</item>
+        <item>Business Pending App</item>
+        <item>Business Current Customer</item>
         <item>Life Insurance</item>
 
 

@@ -25,10 +25,10 @@ public class ContactsAdapter extends
     private List<Contact> mContactIds;
     public ContactsAdapter(Context c, List<Contact> input_array) {
 
-        //I am trying to migrate over to a passed in input array so I can retrieve it under the general method. Havent fixed main activity yet
+        //assign context and contact ids
         mContext = c;
         mContactIds=input_array;
-        // mLeafIds =  mContext.getResources().getStringArray(R.array.PSU_leaf_strings);
+
     }
 
     public int getCount() {
@@ -49,19 +49,18 @@ public class ContactsAdapter extends
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
             contactView = new TextView(mContext);
-            // leafView.setLayoutParams(new GridView.LayoutParams(185, 185));
+
 
             contactView.setPadding(8, 8, 8, 8);
 
         } else {
            contactView = (TextView) convertView;
         }
-
+        //set text based on position in listview
         contactView.setText(mContactIds.get(position).getName());
 
         return contactView;
     }
 
-    // references to our images
-    // public String[] mLeafIds =  mContext.getResources().getStringArray(R.array.contact1_leaf_strings);
+
 }

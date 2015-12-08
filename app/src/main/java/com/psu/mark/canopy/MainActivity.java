@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity  implements Runnable{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Contacts = MainActivity.this.getResources().getStringArray(R.array.ContactsArray);
+        //call to function which pulls xml data holding contacts
         run();
         ListView listview = (ListView) findViewById(R.id.listview);
 
@@ -42,14 +42,11 @@ public class MainActivity extends AppCompatActivity  implements Runnable{
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 Log.i("HQposition ", "p " + position);
-                String contact_number= Contacts.get(position).getID();//position is a value specific to grid view
-           // String[] parts=fullcontact.split("-");
-           //  String   contact_number = parts[1] ;
-              //  Toast.makeText(MainActivity.this, "contact number" + contact_number, //<< get the contact # following treesdisplay method
-              //          Toast.LENGTH_SHORT).show();
+                String contact_number= Contacts.get(position).getID();//
 
 
-
+                //call TreeDisplayActivity -- pass the contact number as that is used to parse
+                //Tree Structure XML for the Tree Display Activity
                 Log.i("HQcontact ", contact_number);
                 Intent i = new Intent(MainActivity.this, TreeDisplayActivity.class);
                 i.putExtra("id_key", contact_number);
@@ -61,10 +58,11 @@ public class MainActivity extends AppCompatActivity  implements Runnable{
 
 
 
-        //Default Stuff, dont know if we want it
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        //This button adds a new contact. This feature doesnt actually do anything because we cannot
+        //query an external database for a tree structure yet, as we dont have a server
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +93,7 @@ public class MainActivity extends AppCompatActivity  implements Runnable{
     }
 
     @Override
+    //prepare contact XML for display
     public void run() {
         try {
             Contacts = Contact.createContactsListXML(this);
