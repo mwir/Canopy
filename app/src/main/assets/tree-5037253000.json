@@ -1,0 +1,52 @@
+{
+  "tree": {
+    "contact_number": "5037253000",
+    "number_of_leaves": 14,
+    "well_behaved": true,
+    "timing_parameter": ",,",
+    "leaves": [{
+      "text": "School Closure Info",
+      "path": "1"
+    }, {
+      "text": "Schedule Visit",
+      "path": "2"
+    }, {
+      "text": "New Student Orientation",
+      "path": "3"
+    }, {
+      "text": "Odin Account",
+      "path": "4"
+    }, {
+      "text": "Financial Aid",
+      "path": "5"
+    }, {
+      "text": "Administrative Operator",
+      "path": "6"
+    }, {
+      "text": "Office Location",
+      "path": "7"
+    }, {
+      "text": "Verify Registration",
+      "path": "4,3"
+    }, {
+      "text": "Registration Holds",
+      "path": "2,3"
+    }, {
+      "text": "Reg. and Records Operator",
+      "path": "2,5"
+    }, {
+      "text": "Campus Emergency",
+      "path": "4,1"
+    }, {
+      "text": "Security Operator",
+      "path": "4,2"
+    }, {
+      "text": "Campus Safety Policy",
+      "path": "2,2,1"
+    }, {
+      "text": "Enter Party Extension",
+      "path": "2,2,2"
+    }]
+
+  }
+}

@@ -2,7 +2,7 @@
 <resources>
     <!--this contains the path structure for a single contact, user readable string resources will be stored
      elsewhere-->
-    <integer name="number_of_leaves5032387433">13</integer>
+    <integer name="number_of_leaves5032387433">17</integer>
     <string name="timing_parameter5032387433">,,,</string>
     <integer name="behavior5032387433">1</integer>
     <string name="contact_number5032387433">5032387433</string>
@@ -34,8 +34,8 @@
         <item>7</item>
     </integer-array>
     <integer-array name="leaf_8_path5032387433">
-        <item>2</item>
-        <item>2</item>
+        <item>4</item>
+        <item>3</item>
     </integer-array>
     <integer-array name="leaf_9_path5032387433">
         <item>2</item>
@@ -54,8 +54,29 @@
         <item>2</item>
     </integer-array>
     <integer-array name="leaf_13_path5032387433">
-        <item>4</item>
+        <item>2</item>
+        <item>2</item>
+        <item>1</item>
+    </integer-array>
+    <integer-array name="leaf_14_path5032387433">
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+    </integer-array>
+    <integer-array name="leaf_15_path5032387433">
+        <item>2</item>
+        <item>2</item>
         <item>3</item>
+    </integer-array>
+    <integer-array name="leaf_16_path5032387433">
+        <item>2</item>
+        <item>2</item>
+        <item>4</item>
+    </integer-array>
+    <integer-array name="leaf_17_path5032387433">
+        <item>2</item>
+        <item>2</item>
+        <item>5</item>
     </integer-array>
 
 
@@ -72,12 +93,16 @@
         <item>Comments and Concerns</item>
         <item>Lost and Found</item>
         <item>Administrative Office</item>
-        <item>Max Service Alert</item>
-        <item>West Train Service Alert</item>
+        <item>Where to Buy Tickets</item>
+        <item>WES Train Service Alert</item>
         <item>StreetCar Service Alert</item>
         <item>Ticket and Pass Info</item>
         <item>How to Pay Transfer</item>
-        <item>Where to Buy Tickets</item>
+        <item>Max Service Alert RED</item>
+        <item>Max Service Alert BLUE</item>
+        <item>Max Service Alert YELLOW</item>
+        <item>Max Service Alert GREEN</item>
+        <item>Max Service Alert ORANGE</item>
 
 
 
@@ -98,6 +123,10 @@
         <item>@array/leaf_11_path5032387433</item>
         <item>@array/leaf_12_path5032387433</item>
         <item>@array/leaf_13_path5032387433</item>
+        <item>@array/leaf_14_path5032387433</item>
+        <item>@array/leaf_15_path5032387433</item>
+        <item>@array/leaf_16_path5032387433</item>
+        <item>@array/leaf_17_path5032387433</item>
 
     </array>
 

@@ -8,8 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.Arrays;
-
 /**
  * Created by Mark on 11/30/2015.
  * leaf adapter handles all the display and action of each leaf node on the tree displayed by TreeDisplayActivity
@@ -19,12 +17,12 @@ public class LeafAdapter extends BaseAdapter {
     private final String minside_timing_parameter;
     private Context mContext;
    private String[] mLeafIds;
-    private int[][] mleaf_branches;
+    private String[] mleaf_branches;
     public String selectedBranch;
-    private int mbehavior_parameter;
+    private boolean mbehavior_parameter;
 
 
-    public LeafAdapter(Context c, String[] input_array, int[][] leaf_branches, String inside_timing_parameter, int behavior_parameter) {
+    public LeafAdapter(Context c, String[] input_array, String[] leaf_branches, String inside_timing_parameter, boolean behavior_parameter) {
 
         //read all data passed in from main activity
         mContext = c;
@@ -81,20 +79,20 @@ public class LeafAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
 
-                if (mbehavior_parameter == 1) {
-                    int[] branch_path = mleaf_branches[position];//position is a value specific to grid view
+                if (mbehavior_parameter) {
+                    String branch_path = mleaf_branches[position];//position is a value specific to grid view
 
-                    Toast.makeText(mContext, "tree path" + Arrays.toString(branch_path),
+                    Toast.makeText(mContext, "tree path" + branch_path,
                             Toast.LENGTH_SHORT).show();
 
 
-                    String intermediaryselectedBranch = Arrays.toString(branch_path);
+                    String intermediaryselectedBranch = branch_path;
                     selectedBranch = intermediaryselectedBranch.replaceAll(",", minside_timing_parameter);
                     ((TreeDisplayActivity) mContext).setSelectedBranch(selectedBranch);
-                } else if (mbehavior_parameter == 0) {
-                    int[] branch_path = mleaf_branches[position];//position is a value specific to grid view
+                } else if (!mbehavior_parameter) {
+                    String branch_path = mleaf_branches[position];//position is a value specific to grid view
 
-                    Toast.makeText(mContext, "tree path" + Arrays.toString(branch_path) + "\nTiming cannot be garaunteed. You must enter the path manually",
+                    Toast.makeText(mContext, "tree path" + branch_path + "\nTiming cannot be garaunteed. You must enter the path manually",
                             Toast.LENGTH_LONG).show();
 
 

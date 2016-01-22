@@ -18,8 +18,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity  implements Runnable{
 
+
+
+
     //private List<Contact> contacts = null;
     private List<Contact> Contacts;
+
 
     public MainActivity(){
 
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity  implements Runnable{
         setContentView(R.layout.activity_main);
         //call to function which pulls xml data holding contacts
         run();
+
         ListView listview = (ListView) findViewById(R.id.listview);
 
 
@@ -103,6 +108,8 @@ public class MainActivity extends AppCompatActivity  implements Runnable{
             e.printStackTrace();
         }
     }
+
+
 
 
 }
